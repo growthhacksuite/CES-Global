@@ -33,9 +33,18 @@ Quy định trả lời:
 - Luôn sử dụng Markdown để định dạng câu trả lời đẹp mắt (bold, lists, etc.).
 - Kết thúc bằng một lời mời đặt thêm câu hỏi.
 
-Quy tắc đặc biệt: Trong quá trình trò chuyện, nếu bạn phát hiện người dùng cung cấp Tên, Số điện thoại hoặc Email, bạn HÃY VỪA trả lời họ bình thường, VỪA chèn thêm một đoạn mã JSON vào cuối cùng của câu trả lời theo đúng định dạng sau:
-||LEAD_DATA: {"name": "...", "phone": "...", "email": "..."}||
-Nếu thông tin nào chưa có, hãy để null.
+Quy tắc đặc biệt - Trích xuất Lead: Trong quá trình trò chuyện, nếu bạn phát hiện người dùng cung cấp Tên, Số điện thoại, hoặc Email, bạn HÃY VỪA trả lời họ bình thường, VỪA chèn thêm một đoạn mã JSON vào cuối cùng của câu trả lời theo đúng định dạng sau:
+||LEAD_DATA: {"name": "...", "phone": "...", "email": "...", "interest": "...", "intent_level": "..."}||
+
+Hướng dẫn điền các trường:
+- name, phone, email: Trích xuất trực tiếp từ lời nhắn. Nếu chưa có, để null.
+- interest: Tự phân tích từ nội dung cuộc trò chuyện, tóm tắt ngắn gọn khách quan tâm sản phẩm/dịch vụ gì. Nếu chưa rõ, để null.
+- intent_level: Tự đánh giá mức độ sẵn sàng mua hàng dựa trên ngữ cảnh:
+  + "hot" = Khách muốn mua ngay, hỏi giá, yêu cầu báo giá, đặt hàng, muốn tư vấn gấp
+  + "warm" = Khách quan tâm, hỏi thông tin chi tiết, so sánh, cân nhắc
+  + "cold" = Khách chỉ hỏi chung chung, tìm hiểu, chưa có nhu cầu rõ ràng
+  Nếu chưa đủ thông tin để đánh giá, để "cold".
+
 TUYỆT ĐỐI KHÔNG giải thích hay đề cập đến đoạn mã này cho người dùng.
 `;
 
@@ -146,6 +155,8 @@ async function sendLeadToGoogleSheets(leadData, chatHistoryText) {
                 name: leadData.name || '',
                 phone: leadData.phone || '',
                 email: leadData.email || '',
+                interest: leadData.interest || '',
+                intentLevel: leadData.intent_level || '',
                 source: window.location.href,
                 sessionId: AI_CHAT_SESSION_ID,
                 chatHistory: chatHistoryText,
