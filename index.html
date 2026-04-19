@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "background": "#f7f9ff",
+                    "inverse-primary": "#49ddbd",
+                    "on-background": "#0f1d29",
+                    "surface-container-highest": "#d6e4f5",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#25323f",
+                    "surface": "#f7f9ff",
+                    "surface-dim": "#cedbed",
+                    "surface-container": "#e3efff",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#3b0900",
+                    "on-primary-container": "#004b3e",
+                    "on-secondary-fixed-variant": "#004a78",
+                    "secondary": "#00629d",
+                    "outline-variant": "#bbcac4",
+                    "surface-bright": "#f7f9ff",
+                    "tertiary-fixed-dim": "#ffb5a0",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#3c4a45",
+                    "primary-container": "#21c4a5",
+                    "on-secondary-fixed": "#001d34",
+                    "on-primary-fixed-variant": "#005142",
+                    "outline": "#6c7a75",
+                    "surface-container-high": "#dce9fb",
+                    "inverse-on-surface": "#e8f2ff",
+                    "primary": "#006b59",
+                    "tertiary": "#b12e00",
+                    "on-surface": "#0f1d29",
+                    "secondary-container": "#66b6ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#7e1e00",
+                    "on-primary-fixed": "#002019",
+                    "surface-variant": "#d6e4f5",
+                    "secondary-fixed-dim": "#99cbff",
+                    "on-tertiary-fixed-variant": "#872100",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#edf4ff",
+                    "on-secondary-container": "#004673",
+                    "primary-fixed": "#6bfad8",
+                    "tertiary-fixed": "#ffdbd1",
+                    "surface-tint": "#006b59",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#49ddbd",
+                    "tertiary-container": "#ff9071",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#cfe5ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .noto-serif { font-family: 'Noto Serif', serif; }
+        .inter { font-family: 'Inter', sans-serif; }
+    </style>
+    <!-- Chatbot Styles & Libraries -->
+    <link rel="stylesheet" href="chatbot.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="bg-surface text-on-background inter selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/20">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-serif tracking-tight text-teal-900 font-bold">Arinet</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-slate-600 font-medium hover:text-teal-600 transition-colors duration-300" href="#">Giới thiệu</a>
+<a class="text-slate-600 font-medium hover:text-teal-600 transition-colors duration-300" href="#">Dịch vụ</a>
+<a class="text-slate-600 font-medium hover:text-teal-600 transition-colors duration-300" href="#">GrowthHackSuite</a>
+<a class="text-slate-600 font-medium hover:text-teal-600 transition-colors duration-300" href="#">Liên hệ</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-medium tracking-wide hover:opacity-90 active:scale-95 transition-all">
+            Tham gia ngay
+        </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-surface">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="z-10 space-y-8">
+<span class="inter text-xs font-bold uppercase tracking-[0.2em] text-primary">Digital Performance Excellence</span>
+<h1 class="noto-serif text-5xl md:text-7xl leading-[1.1] text-on-background tracking-tight">
+                Arinet: Đột phá doanh thu qua <span class="italic text-primary">Affiliate Marketing.</span>
+</h1>
+<p class="inter text-lg text-on-surface-variant max-w-lg leading-relaxed">
+                Công ty digital performance hàng đầu tại Việt Nam, chuyên tối ưu hóa nội dung và quảng cáo trả phí tại thị trường Mỹ.
+            </p>
+<div class="flex items-center gap-6 pt-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transition-all">
+                    Hợp tác với chúng tôi
+                </button>
+<button class="text-on-background font-semibold flex items-center gap-2 group">
+                    Xem sản phẩm 
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-primary-container/20 rounded-full blur-[100px]"></div>
+<div class="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl">
+<img alt="Global digital network and social connectivity visualization" class="w-full h-full object-cover" data-alt="High-end, professional abstract 3D visualization representing a global digital network and social connectivity with glowing interconnected nodes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoytfdr5JjjXpX1T5KdPj6wGEKU12tFZRpBT1OlPD73NkJ8w2aZPmV7OReyuPb98tMnXMbYhW89njm7i8jRSdUBMR5vge2OnX_H3o0KrnrmGXeYLVke84mciLOfg0Cb8wY3tHnivw66IYqWRNauSwjYb2Zt_aOyvt9hQoL_N13HlFrSSPPImw5QFLNXQBWKrNKa-VNch_9upGwSNzxdmWs-sz-TRDPEFsLBE7amJo80D3CGIRET0o3STjUmYo9UpSJKwSdODIaWnu9"/>
+<div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-on-background/80 to-transparent">
+<p class="text-white font-serif text-2xl italic">"Sự xuất sắc không phải là một hành động, mà là thói quen của giới tinh hoa kỹ thuật số."</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Introduction Section -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-4xl mx-auto px-8 text-center space-y-10">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="rocket_launch">rocket_launch</span>
+<h2 class="noto-serif text-4xl md:text-5xl text-on-background leading-tight">
+            Sứ mệnh của chúng tôi là <span class="text-primary italic">Kết quả thực tế.</span>
+</h2>
+<p class="inter text-xl text-on-surface-variant leading-relaxed">
+            Arinet tập trung vào việc xây dựng các nền tảng nội dung thu hút khách hàng có ý định mua hàng thực sự. Chúng tôi không chỉ tạo ra traffic, chúng tôi tạo ra giá trị chuyển đổi bền vững cho đối tác toàn cầu.
+        </p>
+</div>
+</section>
+<!-- Values Section (Bento-style Grid) -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-16 text-center">
+<h2 class="noto-serif text-4xl mb-4">Giá trị mang lại cho đối tác</h2>
+<p class="inter text-on-surface-variant">Tối ưu hóa từng điểm chạm trong phễu khách hàng</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl space-y-6 hover:shadow-xl transition-shadow border border-outline-variant/10">
+<div class="w-12 h-12 bg-primary-container/10 flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="person_search">person_search</span>
+</div>
+<h3 class="noto-serif text-xl font-bold">Đối tượng mục tiêu</h3>
+<p class="inter text-sm text-on-surface-variant leading-relaxed">
+                    Chuyên gia Mỹ trong lĩnh vực Marketing, Sales &amp; E-commerce với nhu cầu thực tế cao.
+                </p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl space-y-6 hover:shadow-xl transition-shadow border border-outline-variant/10">
+<div class="w-12 h-12 bg-primary-container/10 flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="insights">insights</span>
+</div>
+<h3 class="noto-serif text-xl font-bold">Nguồn Traffic</h3>
+<p class="inter text-sm text-on-surface-variant leading-relaxed">
+                    Kết hợp SEO tự nhiên bền vững cùng Google Ads và hợp tác nội dung chiến lược.
+                </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl space-y-6 hover:shadow-xl transition-shadow border border-outline-variant/10">
+<div class="w-12 h-12 bg-primary-container/10 flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="article">article</span>
+</div>
+<h3 class="noto-serif text-xl font-bold">Nội dung chất lượng</h3>
+<p class="inter text-sm text-on-surface-variant leading-relaxed">
+                    Đánh giá chuyên sâu, hướng dẫn sử dụng và so sánh sản phẩm dựa trên nghiên cứu kỹ lưỡng.
+                </p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl space-y-6 hover:shadow-xl transition-shadow border border-outline-variant/10">
+<div class="w-12 h-12 bg-primary-container/10 flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="query_stats">query_stats</span>
+</div>
+<h3 class="noto-serif text-xl font-bold">Minh bạch số liệu</h3>
+<p class="inter text-sm text-on-surface-variant leading-relaxed">
+                    Theo dõi chính xác qua các nền tảng Tapfiliate, Impact, PartnerStack.
+                </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Founder Section -->
+<section class="py-32 bg-surface-container-high overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 relative">
+<div class="flex flex-col lg:flex-row items-center gap-20">
+<div class="lg:w-1/2 relative">
+<div class="absolute -left-10 -top-10 text-[10rem] font-serif text-primary/5 select-none leading-none">Tracy</div>
+<img alt="Founder Tracy Bui" class="relative z-10 rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="Close-up portrait of female entrepreneur Tracy Bùi, looking thoughtfully off-camera, sophisticated lighting, warm tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWKDYFLEt69nrJZxV-AetQ-Vg5AQJFvdV_zBl3ZqIpeVE06ITtgdCTvQplgW-JWcLuaAqsXxD251IQ-UtLWnKtte5msYoUgNtbJJLN2s1JwhdLHpPDXSxNPM0rwAAabyzUJeVP3GbT_FsKQ8YOz8_vQJVnrn2RKgKNU1gBxnLOOdi-wpjIKjJuCfiwHPYsGp9qX2HH6aH1XKFp42RdncPN-i0oex-_8pGMv7tlwHwNazlPPGthhZT28ZG6K9JQ_HeWJMa0ZJBeB9rb"/>
+</div>
+<div class="lg:w-1/2 space-y-8">
+<span class="inter text-xs font-bold uppercase tracking-[0.2em] text-primary">The Visionary</span>
+<h2 class="noto-serif text-5xl text-on-background">Bùi Thị Ngọc Trinh <span class="italic text-primary">(Tracy)</span></h2>
+<div class="h-1 w-20 bg-primary"></div>
+<p class="inter text-xl italic text-on-surface leading-relaxed">
+                    "Arinet không chỉ là một công ty; đó là một phong trào. Chúng tôi đang tái định nghĩa tiêu chuẩn chuyên nghiệp trong lĩnh vực affiliate marketing."
+                </p>
+<p class="inter text-on-surface-variant leading-relaxed">
+                    Với tư cách là Nhà sáng lập &amp; CEO, Tracy đã dành hơn một thập kỷ điều hành các mạng lưới MMO và affiliate phức tạp. Sự lãnh đạo của bà được định hình bởi cam kết về sự minh bạch, chiến lược cao cấp và nỗ lực không ngừng nghỉ vì thành công của mọi đối tác.
+                </p>
+<div class="pt-6">
+<img alt="Signature" class="h-16 w-auto opacity-70" data-alt="Elegant handwritten signature of Tracy Bùi in flowing script on a clean background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE8V6IwclfCnwvW0CwhtuTNC8JrRQFiDK5EOfYT5fstqq82wRmllKvExK0iwtOa2YaUbfuDf5dTchldmFYBKksoDrt8MJkLRQWPzKgKTpXx2MiudA1ju-lrSKmK7ct7t7rQrD7yEEfxlahz8SF9q5mbdxIjTV0X5-oGVGeMdfx7wsba8xAMDe2g6A8abnCOqPd_56-H1w0CnfzQoOfttM-bOi1OLlPRnHmzjEHJTG0W6JEHxuvnrC2SznR_n0-7tVZXUEFEAnS7cs2"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Showcase (GrowthHackSuite) -->
+<section class="py-32 bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 text-center mb-20">
+<h2 class="noto-serif text-4xl mb-6">Sản phẩm chủ lực: <span class="italic text-primary">GrowthHackSuite</span></h2>
+<p class="inter text-on-surface-variant max-w-2xl mx-auto">
+            Trang web đánh giá và so sánh SaaS hàng đầu cho quản lý marketing và các solopreneur, giúp họ tìm ra công cụ tối ưu để bứt phá tăng trưởng.
+        </p>
+</div>
+<div class="relative max-w-6xl mx-auto px-8">
+<div class="bg-surface-container-lowest rounded-3xl p-4 shadow-[0_40px_100px_-20px_rgba(0,107,89,0.15)] border border-outline-variant/10">
+<img alt="Platform Dashboard" class="rounded-2xl w-full shadow-inner" data-alt="Clean minimalist software dashboard interface showing affiliate marketing analytics and social feed with teal accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmj7VBmVSjXgsDkv4LaZrk85N3uxZJr-Wx2qr37YH1AXmjy53oSSEVT7QhsHSkAtFZ70mWTVsAwd1bHthuNpcDDCxwBAXeA5kVJ0yK1s_kuD_dONEqr-8b6VGoUQwWVtnRe_gdOaARqgEtDyFYGsbAx4xnL_4AkfEkDeYAdFLpjotpolW6-bDskwlor9SytxmJq7vgp-t_XG0_hu5D0V50sO_V_oZvXN_rQxWH7sK9b8CsVrGz85zbSnpzaoj-KRPtJawSWVdm1mQT"/>
+</div>
+<div class="absolute -bottom-10 -right-10 bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-outline-variant/20 hidden md:block">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant uppercase font-bold tracking-widest">Tăng trưởng SEO</p>
+<p class="text-lg font-bold text-primary">+240% Lưu lượng</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Arinet Section -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="noto-serif text-4xl mb-8">Tại sao các thương hiệu quốc tế chọn <span class="italic text-primary">Arinet?</span></h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+<div>
+<h4 class="font-bold mb-1">Tuyển chọn nghiêm ngặt</h4>
+<p class="text-sm text-on-surface-variant">Chúng tôi chỉ quảng bá những sản phẩm đã được đội ngũ chuyên gia nghiên cứu và kiểm chứng kỹ lưỡng.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="search_insights">search_insights</span>
+<div>
+<h4 class="font-bold mb-1">Nội dung tối ưu chuyển đổi</h4>
+<p class="text-sm text-on-surface-variant">Tập trung vào các từ khóa có ý định thương mại cao (Commercial Intent), dẫn dắt người dùng đến hành vi mua hàng.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="ads_click">ads_click</span>
+<div>
+<h4 class="font-bold mb-1">Tăng tốc bằng Google Ads</h4>
+<p class="text-sm text-on-surface-variant">Sử dụng quảng cáo trả phí như một đòn bẩy để đẩy nhanh kết quả và mở rộng tệp khách hàng tiềm năng.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+<div>
+<h4 class="font-bold mb-1">Báo cáo minh bạch</h4>
+<p class="text-sm text-on-surface-variant">Làm việc với quy trình rõ ràng, cung cấp báo cáo định kỳ chi tiết về hiệu quả chiến dịch.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-on-background p-12 rounded-3xl text-white space-y-8">
+<span class="material-symbols-outlined text-5xl text-primary/50" data-icon="format_quote">format_quote</span>
+<blockquote class="noto-serif text-2xl italic leading-relaxed">
+                    "Tầm nhìn của Tracy về một hệ sinh thái MMO chuyên nghiệp chính xác là những gì thị trường đang thiếu. Arinet đã thay đổi cách chúng tôi tiếp cận thị trường Media Buying cao cấp."
+                </blockquote>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400" data-icon="person">person</span>
+</div>
+<div>
+<p class="font-bold text-lg">Elena Vance</p>
+<p class="text-sm text-slate-400 uppercase tracking-widest">Media Strategist, USA</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Call to Action -->
+<section class="py-32 bg-surface">
+<div class="max-w-5xl mx-auto px-8">
+<div class="bg-on-background rounded-[2rem] p-16 text-center space-y-8 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/10 opacity-50"></div>
+<div class="relative z-10 space-y-8">
+<h2 class="noto-serif text-5xl text-white">Trở thành đối tác chiến lược.</h2>
+<p class="inter text-slate-400 text-lg max-w-xl mx-auto">
+                    Nâng tầm thương hiệu của bạn tại thị trường quốc tế với các giải pháp Performance Marketing đột phá từ Arinet.
+                </p>
+<div class="pt-6">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-xl font-bold text-xl hover:scale-105 transition-transform">
+                        Đăng ký tư vấn ngay
+                    </button>
+</div>
+<p class="text-slate-500 text-sm">Chỉ dành cho các đối tác đủ tiêu chuẩn và cam kết về chất lượng.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-50 w-full py-16 px-8 mt-auto border-t border-slate-200">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-serif text-teal-900 mb-6 font-bold">Arinet</div>
+<p class="inter text-slate-500 leading-relaxed text-sm">
+                Đơn vị dẫn đầu về Digital Performance tại Việt Nam, mang thương hiệu của bạn vươn xa tại thị trường Mỹ và toàn cầu.
+            </p>
+</div>
+<div>
+<h4 class="inter text-xs font-bold uppercase tracking-widest text-teal-700 mb-6">Dịch vụ</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-teal-600 transition-colors" href="#">Affiliate Marketing</a></li>
+<li><a class="text-slate-500 hover:text-teal-600 transition-colors" href="#">SEO &amp; Content Strategy</a></li>
+<li><a class="text-slate-500 hover:text-teal-600 transition-colors" href="#">Paid Advertising</a></li>
+</ul>
+</div>
+<div>
+<h4 class="inter text-xs font-bold uppercase tracking-widest text-teal-700 mb-6">Pháp lý</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-teal-600 transition-colors" href="#">Chính sách bảo mật</a></li>
+<li><a class="text-slate-500 hover:text-teal-600 transition-colors" href="#">Điều khoản dịch vụ</a></li>
+<li><a class="text-slate-500 hover:text-teal-600 transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="inter text-xs font-bold uppercase tracking-widest text-teal-700 mb-6">Kết nối</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-teal-600 transition-colors" href="#">Liên hệ</a></li>
+<li><a class="text-slate-500 hover:text-teal-600 transition-colors" href="#">LinkedIn</a></li>
+<li><a class="text-slate-500 hover:text-teal-600 transition-colors" href="#">Facebook</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto pt-16 border-t border-slate-200 mt-16 text-center">
+<p class="inter text-slate-500 text-sm">© 2024 Arinet Media Network. Bảo lưu mọi quyền.</p>
+</div>
+</footer>
+    <!-- Floating AI Chatbot Container -->
+    <div id="chatbot-container">
+        <!-- Floating Button -->
+        <div id="chatbot-toggle" title="Chat với AI Trợ lý">
+            <span class="material-symbols-outlined text-3xl">chat</span>
+        </div>
+
+        <!-- Chat Window -->
+        <div id="chatbot-window">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="status-dot"></div>
+                    <span class="font-bold">AI Trợ lý - Tracy Bùi</span>
+                </div>
+                <div class="header-actions">
+                    <div id="refresh-btn" class="header-btn" title="Refresh">
+                        <span class="material-symbols-outlined">refresh</span>
+                    </div>
+                    <div id="close-btn" class="header-btn" title="Close">
+                        <span class="material-symbols-outlined">close</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Content Area -->
+            <div id="chat-messages">
+                <!-- Messages will appear here -->
+            </div>
+
+            <!-- Input Area -->
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Hỏi tôi về Affiliate toàn cầu..." autocomplete="off">
+                <div id="send-btn">
+                    <span class="material-symbols-outlined">send</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Logic -->
+    <script type="module" src="chatbot.js"></script>
+</body></html>
