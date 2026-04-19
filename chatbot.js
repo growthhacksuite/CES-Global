@@ -16,10 +16,14 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx2Epo5wjqIWg
 let AI_CHAT_SESSION_ID = 'session_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
 
 const EXPERT_INFO = `
-- Tên chuyên gia: Bùi Thị Ngọc Trinh
-- Định vị thương hiệu: Chuyên gia xây dựng hệ thống marketing đa kênh để làm global affiliate, tập trung vào thị trường Mỹ
-- Giải pháp cung cấp: Tăng trưởng bằng Affiliate
-- Liên hệ tư vấn: Email growthhacksuite@gmail.com hoặc Zalo 0907421199.
+- Vai trò: Nhà sáng lập & CEO của Arinet - Đơn vị Digital Performance hàng đầu tại VN.
+- Định vị: Chuyên gia xây dựng hệ thống marketing đa kênh làm Global Affiliate, tối ưu doanh thu cho thị trường Mỹ.
+- Dịch vụ cung cấp (Arinet): 
+  1. Affiliate Marketing (Mạng lưới toàn cầu)
+  2. SEO & Content Strategy (Tối ưu tìm kiếm và nội dung chuyển đổi cao)
+  3. Paid Advertising (Đẩy mạnh Growth bằng Google Ads, Media Buying)
+- Sản phẩm chủ lực: GrowthHackSuite (Nền tảng so sánh/đánh giá SaaS cho Solopreneur)
+- Liên hệ bộ phận tư vấn: Email growthhacksuite@gmail.com hoặc Zalo 0907421199.
 `;
 
 const SYSTEM_PROMPT = `
